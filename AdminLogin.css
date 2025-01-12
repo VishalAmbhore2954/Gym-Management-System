@@ -9,15 +9,14 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     /* flex-direction: column; */
     background-color: #141722;
 }
 .container{
     border: 1px solid goldenrod;
     width: 300px;
-    height: 300px;
-    margin-top: 10px;
+    height: 250px;
     border-radius: 10px;
     flex-direction: column;
     display: flex;
@@ -27,6 +26,11 @@
 .loginlogo {
     display: flex;
     align-items: center;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 1px solid goldenrod;
 }
 .container img {
     width: 40px;
@@ -71,6 +75,7 @@
      height: 30px;
      border-radius: 5px;
      color: black;
+     margin-top: 20px 0 20px 0;
 }
 
 .form-group label {
@@ -79,7 +84,7 @@
 }
 
 .navbar {
-    height: 80px;
+    height: 20vh;
     width: 100vw;
     /* border: 2px solid black; */
     background-color: #050816;
@@ -112,6 +117,10 @@
 
 .nxt {
     display: flex;
+    justify-content: space-between;
+}
+.nxt a {
+    text-decoration: none;
 }
 
 .container p {
@@ -130,3 +139,12 @@
     text-align: center;
 }
 
+.builder img {
+    width: 200px;
+    margin: 50px;
+}
+
+.builder img:hover {
+    width: 220px;
+    margin: 50px;
+}
