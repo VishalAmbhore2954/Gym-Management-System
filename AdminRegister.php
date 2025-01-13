@@ -1,3 +1,33 @@
+<?php
+    include('conn.php');
+
+    if(isset($_POST['submit'])){
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $email = $_POST['email'];
+        $mno = $_POST['mno'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $cpassword = $_POST['cpassword'];
+
+        if($password != $cpassword){
+            echo "<script>alert('password and confirm password not match')</script>";
+        }else{
+
+          $sql = "INSERT INTO `admin` (`name`,`lname`,`email`,`mno`,`username`,`password`,`cpassword`) VALUES ('$fname','$lname','$email','$mno','$username','$password','$cpassword')";
+
+            $result = mysqli_query($conn,$sql);
+
+            if($result){
+                echo "<script>alert('Data inserted successfully')</script>";
+             }else{
+                echo "<script>alert('Data not inserted')</script>";
+            }
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +43,7 @@
     </div>
 </div>
     <div class="container">
-        <form action="">
+        <form method="POST">
             <h2>REGISTRATION</h2>
         <div class="form-group">
             <label for="">Enter First Name :</label><br>
