@@ -1,3 +1,46 @@
+<?php
+    include('conn.php');
+
+
+    if(isset($_POST['submit'])){
+
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $email = $_POST['email'];
+        $mno = $_POST['mno'];
+        $address = $_POST['address'];
+        $duration = $_POST['duration'];
+        $fees = $_POST['fees'];
+        $advance = $_POST['advance'];
+        $gender = $_POST['gender'];
+        if(!empty($_POST['fees']&&$_POST['advance'])){
+            $fees1 = $_POST['fees'];
+            $advance1 = $_POST['advance'];
+            $remain = $fees1 - $advance1;
+        }
+
+        if(!empty($_POST['fees']&&$_POST['advance'])){
+            $fees1 = $_POST['fees'];
+            $advance1 = $_POST['advance'];
+            if($fees1>$advance1){
+                $status = "Amount Remain";
+            }else{
+                $status = "Paid";
+            }
+        }
+        
+        $sql = "INSERT INTO `customer`(`name`, `lname`, `email`, `mno`, `address`, `duration`, `fees`, `advance`, `remain`, `gender`, `status`) VALUES ('$fname','$lname','$email','$mno','$address','$duration','$fees','$advance','$remain','$gender','$status')";
+
+        $result = mysqli_query($conn,$sql);
+
+        if($result){
+            echo "<script>alert('Data inserted successfully')</script>";
+         }else{
+            echo "<script>alert('Data not inserted')</script>";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +50,7 @@
     <link rel="stylesheet" href="UserForm.css">
 </head>
 <body>
-    <!-- <div class="logo">
-        <img src="logo.png" alt="">
-        <label for="">FITNESS KING</label>
-    </div> -->
-</div>
+
     <div class="container">
         <form method="POST">
             <h2><img src="logo.png" alt="">REGISTER USER<img src="logo.png" alt=""></h2>
@@ -33,19 +72,19 @@
         </div>
         <div class="form-group">
             <label for="">Enter Address :</label><br>
-            <input type="text" name="username" required>
+            <input type="text" name="address" required>
         </div>
         <div class="form-group">
             <label for="">Enter Duration in Month :</label><br>
-            <input type="text" name="password" required>
+            <input type="text" name="duration" required>
         </div>
         <div class="form-group">
             <label for="">Enter Total Fee :</label><br>
-            <input type="password" name="cpassword" required>
+            <input type="text" name="fees" required>
         </div>
         <div class="form-group">
             <label for="">Enter Credited Fee :</label><br>
-            <input type="password" name="cpassword" required>
+            <input type="text" name="advance" required>
         </div>
         <div id="gender">
             <label for="">GENDER :</label>
@@ -55,9 +94,6 @@
         <input type="submit" name="submit" id="btn" value="REGISTER">
     </div>
         </form>
-    <!-- <div class="logo">
-        <img src="logo.png" alt="">
-        <label for="">FITNESS KING</label>
-    </div> -->
+
 </body>
 </html>
