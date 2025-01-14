@@ -87,7 +87,7 @@
             <input type="text" name="advance" required>
         </div>
         <div id="gender">
-            <label for="">GENDER :</label>
+            <label for="">Gender :</label>
             <input type="radio" name="gender" value="Male">  Male
             <input type="radio" name="gender" value="Female">  Female
         </div>
