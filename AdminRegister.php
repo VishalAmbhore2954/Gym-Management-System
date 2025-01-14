@@ -75,7 +75,7 @@
         </div>
         <input type="submit" name="submit" id="btn" value="REGISTER">
         <div class="nxt">
-            <p>Already have account?</p><a href="AdminLogin.html">Login Here</a>
+            <p>Already have account?</p><a href="AdminLogin.php">Login Here</a>
         </div>
     </div>
         </form>
