@@ -35,7 +35,10 @@
 
         if($result){
             echo "<script>alert('Data inserted successfully')</script>";
-         }else{
+            ?>
+                <meta http-equiv="refresh" content="0; url=AdminHome.php" />
+            <?php
+            }else{
             echo "<script>alert('Data not inserted')</script>";
         }
     }
