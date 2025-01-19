@@ -5,6 +5,7 @@
     $data = mysqli_query($conn,$query);
     // $result = mysqli_num_rows($data);
 
+
     ?>
     <table>
         <tr>
@@ -21,6 +22,7 @@
             <th>Gender</th>
             <th>Admition date</th>
             <th>Status</th>
+            <th>Operation</th>
         </tr>
     
 
@@ -40,8 +42,8 @@
         <td>".$result['remain']."</td>
         <td>".$result['gender']."</td>
         <td>".$result['date']."</td>
-        <td>".$result['status']."</td>";
-        
+        <td>".$result['status']."</td>
+        <td><a href='UpdateUser.php?id=$result[id]'>Update</a><br><br><a href='RemFee.php?id=$result[id]' id='fee'>$ Fee $</a></td>";
     }
 ?>
 
@@ -58,6 +60,7 @@
             color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
+
         table,td,th {
             border : 1px solid goldenrod;
             border-collapse : collapse;
@@ -65,13 +68,24 @@
         }
 
         td,th {
-            padding: 3px;
+            padding: 5px;
             font-size : 12px;
         }
 
         body {
             padding: 20px;
             background-color: #141722;
+        }
+        a{
+            background-color :rgb(255, 208, 0);
+            color : black;
+            border-radius : 5px;
+            text-decoration : none;
+            padding : 2px;
+            font-size : 10px;
+        }
+        #fee {
+            background-color : #67C21B;
         }
     </style>
 </head>
