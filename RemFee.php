@@ -19,7 +19,7 @@
 
     <div class="container">
         <form method="POST">
-            <h2><img src="logo.png" alt="">UPDATE USER<img src="logo.png" alt=""></h2>
+            <h2><img src="logo.png" alt="">Collect Fee<img src="logo.png" alt=""></h2>
             <div class="form-group">
             <label for="">Customer Id :</label><br>
             <input type="text" name="id" value="<?php echo $result['id']?>" required>
@@ -43,7 +43,7 @@
             <input type="text" name="crfee" value="<?php echo $result['remain']?>" Style="color:green" required>
         </div>
         
-        <input type="submit" name="submit" id="btn" value="UPDATE">
+        <input type="submit" name="submit" id="btn" value="Collect Fee">
     </div>
         </form>
 

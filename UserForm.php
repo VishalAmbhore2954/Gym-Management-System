@@ -23,7 +23,7 @@
             $fees1 = $_POST['fees'];
             $advance1 = $_POST['advance'];
             if($fees1>$advance1){
-                $status = "Amount Remain";
+                $status = "Amount Remain X";
             }else{
                 $status = "Paid";
             }
@@ -86,7 +86,7 @@
             <input type="text" name="fees" required>
         </div>
         <div class="form-group">
-            <label for="">Enter Credited Fee :</label><br>
+            <label for="">Enter Advance Fee :</label><br>
             <input type="text" name="advance" required>
         </div>
         <div id="gender">

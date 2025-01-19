@@ -1,10 +1,13 @@
 <?php
     include('conn.php');
     error_reporting(0);
-    $query = "Select * From customer";
+    $query = "SELECT * FROM customer WHERE status = 'Amount Remain X'";
     $data = mysqli_query($conn,$query);
-    // $result = mysqli_num_rows($data);
-
+    
+    
+    if($result = mysqli_num_rows($data)==0){
+        echo "All customer paid their fees.. Thank You :)";
+    }else{
 
     ?>
     <table>
@@ -43,8 +46,9 @@
         <td>".$result['gender']."</td>
         <td>".$result['date']."</td>
         <td>".$result['status']."</td>
-        <td><a href='UpdateUser.php?id=$result[id]'>Update</a><br><br><a href='RemFee.php?id=$result[id]' id='fee'>$ Fee $</a></td>";
+        <td><a href='RemFee.php?id=$result[id]' id='fee'>$ Fee $</a></td>";
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -87,6 +91,7 @@
         #fee {
             background-color : #67C21B;
         }
+
         #eml {
             background-color :rgb(27, 41, 194);
             color : white;

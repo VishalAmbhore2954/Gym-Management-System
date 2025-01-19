@@ -12,10 +12,10 @@
         <span id="logoname">
             FITNESS KING
         </span>
-        <a href="DisplayCust.php">All Customers</a>
-        <a href="RemFee.php">Collect Fees</a>
+        <a href="DisplayCust.php">See/Update Customers</a>
+        <a href="collectFee.php">Collect Fees</a>
         <a href="feeChart.html">Fees Chart</a>
-        <a href="UpdateUser.php">Update User</a>
+        <!-- <a href="UpdateUser.php">Update User</a> -->
         <a href="AdminLogin.php">Log out</a>
 </div>
 <div class="body2">
