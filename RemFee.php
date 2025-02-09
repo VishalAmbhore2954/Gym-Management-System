@@ -63,7 +63,7 @@
         if(!empty($_POST['fees']&&$_POST['advance'])){
             $advance1 = $_POST['advance'] + $crfee;
             if($_POST['fees']>$advance1){
-                $status = "Amount Remain X";
+                $status = "Amount Remain &#10060;";
             }else{
                 $status = "Paid &#9989;";
             }

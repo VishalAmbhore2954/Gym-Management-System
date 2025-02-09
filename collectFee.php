@@ -1,7 +1,7 @@
 <?php
     include('conn.php');
     error_reporting(0);
-    $query = "SELECT * FROM customer WHERE status = 'Amount Remain X'";
+    $query = "SELECT * FROM customer WHERE status = 'Amount Remain &#10060;'";
     $data = mysqli_query($conn,$query);
     
     
